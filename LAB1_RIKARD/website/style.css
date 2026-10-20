@@ -1,0 +1,130 @@
+
+
+/*Seed Constraint: #C44536 
+I used it on: 
+- nav-box a:hover
+- textarea:focus-visible outline
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+html {
+  scroll-padding-top: 50px; /* Samma höjd som navlist (50px) */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* första behållaren hamnar längst till vä, den andra längst till hö */
+  align-items: center;
+  background-color: #bbbbbe;
+  padding: 0 20px;
+
+  position: sticky;
+  top: 0;  /* låser min navlist, så att den alltid ligger synlig högst upp */
+}
+
+.name-box {
+  height: 50px;
+  display: flex;
+  align-items: center; /* centrerar vertikalt */
+}
+
+.nav-box {
+  height: 50px;
+  display: flex;
+  align-items: center; /* centrerar länkarna vertikalt*/
+  gap: 30px; /* mellanrum mellan länkarna */
+}
+
+.nav-box a {
+  color: black;
+  text-decoration: none;  
+}
+
+.nav-box a:hover {
+  color: #C44536;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+form {
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #C44536;
+    outline-offset: 3px;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+    .navbar-container {
+        flex-direction: column;
+    }
+
+    .nav-box {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    form {
+        width: 100%;
+    }
+}
