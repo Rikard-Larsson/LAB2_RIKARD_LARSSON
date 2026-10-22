@@ -8,8 +8,10 @@ form.addEventListener("submit", function(event) {
    
         if (inputName.value.trim().length < 2) {
         nameError.textContent = "Name must have at least 2 characters.";
+        inputName.style.border = "2px solid red";
     } else {
-        
+        nameError.textContent = "";
+        inputName.style.border = "2px solid green";
     }
 });
 
