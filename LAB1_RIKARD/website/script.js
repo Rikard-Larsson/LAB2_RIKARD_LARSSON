@@ -17,3 +17,8 @@ form.addEventListener("submit", function(event) {
 });
 
 
+inputName.addEventListener("input", function() {
+    nameError.textContent = "";
+    inputName.style.border = "";
+});
+
