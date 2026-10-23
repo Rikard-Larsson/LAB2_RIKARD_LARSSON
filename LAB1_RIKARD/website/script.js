@@ -7,6 +7,8 @@ const inputEmail = document.getElementById("email");
 const emailError = document.getElementById("email-error");
 const inputTopic = document.getElementById("topic");
 const topicError = document.getElementById("topic-error");
+const charCounter = document.getElementById("char-counter");
+const inputMessage = document.getElementById("message");
 
 
 
@@ -55,5 +57,15 @@ inputTopic.addEventListener("change", function() {
     } else {
         topicError.textContent = "";
         inputTopic.style.border = "2px solid green";
+    }
+});
+
+inputMessage.addEventListener("input", function() {
+    const count = inputMessage.value.length;
+    charCounter.textContent = count + " characters (minimum 15)";
+    if (count < 15) {
+        charCounter.style.color = "red";
+    } else {
+        charCounter.style.color = "green";
     }
 });
