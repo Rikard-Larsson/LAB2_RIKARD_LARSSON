@@ -5,6 +5,10 @@ const nameError = document.getElementById("name-error");
 const namePattern = /^[\p{L}]+(?:[ '-][\p{L}]+)*$/u;
 const inputEmail = document.getElementById("email");
 const emailError = document.getElementById("email-error");
+const inputTopic = document.getElementById("topic");
+const topicError = document.getElementById("topic-error");
+
+
 
 form.addEventListener("submit", function(event) {
     event.preventDefault();                 //stop reload page
@@ -21,8 +25,15 @@ form.addEventListener("submit", function(event) {
         emailError.textContent = "Please enter a valid email address.";
         inputEmail.style.border = "2px solid red";
     } else {
-    emailError.textContent = "";
-    inputEmail.style.border = "2px solid green";
+        emailError.textContent = "";
+        inputEmail.style.border = "2px solid green";
+    }
+        if (inputTopic.value === "") {
+        topicError.textContent = "Please choose a topic.";
+        inputTopic.style.border = "2px solid red";
+    } else {
+        topicError.textContent = "";
+        inputTopic.style.border = "2px solid green";
     }
 });
 
@@ -35,4 +46,14 @@ inputName.addEventListener("input", function() {
 inputEmail.addEventListener("input", function() {
     emailError.textContent = "";
     inputEmail.style.border = "";
+});
+
+inputTopic.addEventListener("change", function() {
+    if (inputTopic.value === "") {
+        topicError.textContent = "Please choose a topic.";
+        inputTopic.style.border = "2px solid red";
+    } else {
+        topicError.textContent = "";
+        inputTopic.style.border = "2px solid green";
+    }
 });

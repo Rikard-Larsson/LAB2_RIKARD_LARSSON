@@ -142,6 +142,9 @@
     </section>
 
     <section id="contact">
+
+
+
     <h2>Contact</h2>
         <p>
           If you want to contact me, use the form below.
@@ -160,13 +163,21 @@
         <input type="email" id="email" name="email" required>
         <p id="email-error"></p>
         <br><br>
-
+        <label for="topic">Topic of Interest:</label>
+        <br>
+        <select id="topic" name="topic" required>
+            <option value="">Choose a topic</option>
+            <option value="web">Web development</option>
+            <option value="tech">Technology</option>
+            <option value="floorball">Floorball and coaching</option>
+            <option value="other">Something else</option>
+        </select>
+        <p id="topic-error"></p>
         <label for="message">Message:</label>
         <br>
         <textarea id="message" name="message" rows="6" required></textarea>
-
-        <br><br>
-
+        <br>
+        <br>
         <button type="submit">Send message</button>
     </form>
     </section>
