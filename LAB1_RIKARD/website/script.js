@@ -10,6 +10,8 @@ const topicError = document.getElementById("topic-error");
 const charCounter = document.getElementById("char-counter");
 const inputMessage = document.getElementById("message");
 const messageError = document.getElementById("message-error");
+const inputWebsite = document.getElementById("website");
+const websiteError = document.getElementById("website-error");
 
 
 
@@ -45,6 +47,19 @@ form.addEventListener("submit", function(event) {
         messageError.textContent = "";
         inputMessage.style.border = "2px solid green";
     }
+        if (inputWebsite.value.trim() !== "" && !inputWebsite.validity.valid) {
+        websiteError.textContent = "This is not a valid website URL.";
+        inputWebsite.style.border = "2px solid red";
+    } else {
+        websiteError.textContent = "";
+
+    if (inputWebsite.value.trim() !== "") {
+        inputWebsite.style.border = "2px solid green";
+    } else {
+        inputWebsite.style.border = "";
+    }
+
+    }
 });
 
 
@@ -78,4 +93,9 @@ inputMessage.addEventListener("input", function() {
         inputMessage.style.border = "2px solid green";
         messageError.textContent = "";
     }
+});
+
+inputWebsite.addEventListener("input", function() {
+    websiteError.textContent = "";
+    inputWebsite.style.border = "";
 });
