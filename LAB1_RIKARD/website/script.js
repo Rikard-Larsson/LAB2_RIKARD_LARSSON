@@ -69,6 +69,9 @@ form.addEventListener("submit", function(event) {
         (inputWebsite.value.trim() === "" || inputWebsite.validity.valid)
         ) {
         formStatus.textContent = "Thank you very much for your feedback, " + inputName.value.trim() + "!";
+        setTimeout(function() {
+        formStatus.textContent = "";
+        }, 4000);
         form.reset();
         charCounter.textContent = "0 characters (minimum 15)";
         charCounter.style.color = "";
