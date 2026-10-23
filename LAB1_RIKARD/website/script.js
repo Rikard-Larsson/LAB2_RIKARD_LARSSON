@@ -121,3 +121,18 @@ inputWebsite.addEventListener("input", function() {
     websiteError.textContent = "";
     inputWebsite.style.border = "";
 });
+
+form.addEventListener("reset", function() {
+    charCounter.textContent = "0 characters (minimum 15)";
+    charCounter.style.color = "";
+    nameError.textContent = "";
+    emailError.textContent = "";
+    topicError.textContent = "";
+    messageError.textContent = "";
+    websiteError.textContent = "";
+    inputName.style.border = "";
+    inputEmail.style.border = "";
+    inputTopic.style.border = "";
+    inputMessage.style.border = "";
+    inputWebsite.style.border = "";
+});
