@@ -9,6 +9,7 @@ const inputTopic = document.getElementById("topic");
 const topicError = document.getElementById("topic-error");
 const charCounter = document.getElementById("char-counter");
 const inputMessage = document.getElementById("message");
+const messageError = document.getElementById("message-error");
 
 
 
@@ -36,6 +37,13 @@ form.addEventListener("submit", function(event) {
     } else {
         topicError.textContent = "";
         inputTopic.style.border = "2px solid green";
+    }
+        if (inputMessage.value.trim().length < 15) {
+        messageError.textContent = "Please write at least 15 characters.";
+        inputMessage.style.border = "2px solid red";
+    } else {
+        messageError.textContent = "";
+        inputMessage.style.border = "2px solid green";
     }
 });
 
@@ -67,5 +75,7 @@ inputMessage.addEventListener("input", function() {
         charCounter.style.color = "red";
     } else {
         charCounter.style.color = "green";
+        inputMessage.style.border = "2px solid green";
+        messageError.textContent = "";
     }
 });
