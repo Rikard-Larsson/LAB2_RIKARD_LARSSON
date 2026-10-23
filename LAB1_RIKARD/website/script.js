@@ -12,6 +12,7 @@ const inputMessage = document.getElementById("message");
 const messageError = document.getElementById("message-error");
 const inputWebsite = document.getElementById("website");
 const websiteError = document.getElementById("website-error");
+const formStatus = document.getElementById("form-status");
 
 
 
@@ -58,8 +59,26 @@ form.addEventListener("submit", function(event) {
     } else {
         inputWebsite.style.border = "";
     }
-
     }
+    if (
+        inputName.value.trim().length >= 2 &&
+        namePattern.test(inputName.value.trim()) &&
+        inputEmail.validity.valid &&
+        inputTopic.value !== "" &&
+        inputMessage.value.trim().length >= 15 &&
+        (inputWebsite.value.trim() === "" || inputWebsite.validity.valid)
+        ) {
+        formStatus.textContent = "Thank you very much for your feedback, " + inputName.value.trim() + "!";
+        form.reset();
+        charCounter.textContent = "0 characters (minimum 15)";
+        charCounter.style.color = "";
+        inputName.style.border = "";
+        inputEmail.style.border = "";
+        inputTopic.style.border = "";
+        inputMessage.style.border = "";
+        inputWebsite.style.border = "";
+    }
+    
 });
 
 
